@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "build:docs": "npm run build && rm -rf docs && mkdir -p docs && cp -R dist/* docs/",
+    "build:docs": "npm run build && rm -rf docs && mkdir -p docs && rsync -a --delete dist/ docs/",
     "deploy": "npm run build:docs && git add docs && git commit -m \"Publish site to /docs\" || echo \"No changes\" && git push origin master",
+    "dev": "astro dev",
+    "preview": "astro preview",
     "astro": "astro"
   },
   "devDependencies": {
