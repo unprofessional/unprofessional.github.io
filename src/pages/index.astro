@@ -1,9 +1,16 @@
 ---
 import Counter from '../components/Counter.jsx';
+import GitHubRepoStats from "../components/GitHubRepoStats.jsx";
 
 const tools = [
   { name: 'Tool One', href: '/tools/tool-one' },
   { name: 'Tool Two', href: '/tools/tool-two' },
+];
+
+const repos = [
+  "unprofessional/spritebot",
+  "unprofessional/soulbot",
+  // add more of your public repos here
 ];
 ---
 
@@ -35,7 +42,7 @@ const tools = [
         <h2>Projects</h2>
         <ul>
           <li><a href="https://github.com/unprofessional/spritebot" target="_blank" rel="noreferrer">SPRITE (RPG Tracker)</a></li>
-          <li><a href="https://github.com/unprofessional/soulbot-rpg" target="_blank" rel="noreferrer">SOULbot RPG</a></li>
+          <li><a href="https://github.com/unprofessional/soulbot" target="_blank" rel="noreferrer">SOULbot</a></li>
           <!-- add more -->
         </ul>
       </section>
@@ -43,6 +50,12 @@ const tools = [
       <section>
         <h2>About</h2>
         <p>Building practical tools for developers and IT folks. Everything here is open source and designed to be fast and easy to run.</p>
+      </section>
+
+      <section>
+        <h2>Metrics</h2>
+        <p>Live GitHub stats for my open-source projects:</p>
+        <GitHubRepoStats repos={repos} client:visible />
       </section>
 
       <section>
