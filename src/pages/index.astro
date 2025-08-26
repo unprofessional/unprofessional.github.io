@@ -1,0 +1,59 @@
+---
+import Counter from '../components/Counter.jsx';
+
+const tools = [
+  { name: 'Tool One', href: '/tools/tool-one' },
+  { name: 'Tool Two', href: '/tools/tool-two' },
+];
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Unprofessional — Dev/IT Tools & Portfolio</title>
+  </head>
+  <body style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, sans-serif; margin: 2rem; line-height: 1.6;">
+    <header>
+      <h1 style="margin:0;">Unprofessional</h1>
+      <p style="margin-top:.25rem;color:#666;">Dev/IT tools I actually use. Open-source. Fast.</p>
+      <nav style="margin-top:1rem;">
+        <a href="https://github.com/unprofessional" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+      <hr style="margin:1.5rem 0;" />
+    </header>
+
+    <main>
+      <section>
+        <h2>Featured Tools</h2>
+        <ul>
+          {tools.map(t => <li><a href={t.href}>{t.name}</a></li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2>Projects</h2>
+        <ul>
+          <li><a href="https://github.com/unprofessional/spritebot" target="_blank" rel="noreferrer">SPRITE (RPG Tracker)</a></li>
+          <li><a href="https://github.com/unprofessional/soulbot-rpg" target="_blank" rel="noreferrer">SOULbot RPG</a></li>
+          <!-- add more -->
+        </ul>
+      </section>
+
+      <section>
+        <h2>About</h2>
+        <p>Building practical tools for developers and IT folks. Everything here is open source and designed to be fast and easy to run.</p>
+      </section>
+
+      <section>
+        <h1>Unprofessional — Tools Hub</h1>
+        <p>React island test:</p>
+        <Counter client:visible />
+      </section>
+    </main>
+
+    <footer style="margin-top:2rem;color:#666;">
+      © {new Date().getFullYear()} Unprofessional
+    </footer>
+  </body>
+</html>

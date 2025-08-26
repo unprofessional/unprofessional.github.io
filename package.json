@@ -1,0 +1,23 @@
+{
+  "name": "unprofessional.github.io",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "build:docs": "npm run build && rm -rf docs && mkdir -p docs && cp -R dist/* docs/",
+    "deploy": "npm run build:docs && git add docs && git commit -m \"Publish site to /docs\" || echo \"No changes\" && git push origin master",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^5.13.3"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.3.0",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}
